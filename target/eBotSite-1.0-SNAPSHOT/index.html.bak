@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Start Page</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <style>
+            body{
+                background-color: gray;
+            }
+            h1{
+                color: white;
+                text-align: center;
+            }
+            p{
+              font-family: monospace;
+              font-size: 20;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Hello eBot!</h1>
+        <p>Welcome</p>
+    </body>
+</html>
