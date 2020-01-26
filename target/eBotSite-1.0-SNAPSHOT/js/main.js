@@ -189,7 +189,7 @@
 					    number: num,
 					    numberStep: comma_separator_number_step
 					  }, {
-						duration: 1000
+						duration: 1500
 					  }
 					);
 				});
