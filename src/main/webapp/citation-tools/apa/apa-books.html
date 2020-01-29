@@ -30,19 +30,9 @@
 </head>
 
 <body>
-<div style="text-align: center;padding: 32px">
+<div style="text-align: center;padding: 24px">
     <form>
-        <!--                <div class="mdl-textfield mdl-js-textfield mdl-textfield&#45;&#45;floating-label" style="padding-bottom: 28px;width: 100%"-->
-        <!--                     onkeyup="updateResult()">-->
-        <!--                    <input class="mdl-textfield__input" type="text" id="title">-->
-        <!--                    <label class="mdl-textfield__label" for="title">Title</label>-->
-        <!--                </div>-->
-        <!--                <div class="mdl-tooltip" style="text-align: left" for="title">-->
-        <!--                </div>-->
-        <!--                <br>-->
-
-
-        <div class="border" style="padding: 8px">
+        <div class="border" style="padding: 8px 16px 0 16px">
             <label style="color: darkred">Authors (choose one, comma separated list):</label>
             <!--        Author Name -->
             <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label"
@@ -84,7 +74,7 @@
         </div>
         <br>
 
-        <div class="border" style="padding: 8px">
+        <div class="border" style="padding: 8px 16px 0 16px">
             <label>Book information:</label>
             <!--        Book title -->
             <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label"
@@ -149,27 +139,21 @@
             <label id="result"
                    class="float-left"
                    style="width: calc(100% - 32px);white-space:nowrap;overflow: hidden;text-overflow: ellipsis;padding-top: 4px;text-align: left"
-            ></label>
+            >Please type in more information!</label>
             <i class="float-right material-icons" onmouseover="reset()" id="tt_copy" style="outline: none"
                onclick="copyToClip(document.getElementById('result').innerHTML)">file_copy</i>
             <div class="mdl-tooltip" for="tt_copy" id="tt_copy_text">
             </div>
         </div>
-        <!--                <div>-->
-        <!--                    <div class="mdl-textfield mdl-js-textfield" style="padding-bottom: 28px">-->
-        <!--                        <input class="mdl-textfield__input" type="text" readonly>-->
-        <!--                        <label class="mdl-textfield__label" for="result" id="result">Result...</label>-->
-        <!--                    </div>-->
-        <!--                    <button id="tt_copy" class="mdl-button mdl-js-button mdl-button&#45;&#45;icon"-->
-        <!--                            onclick="copyToClip(document.getElementById('result').innerHTML)">-->
-        <!--                        <i class="material-icons" onmouseover="reset()">file_copy</i>-->
-        <!--                    </button>-->
-        <!--                    <div class="mdl-tooltip" for="tt_copy" id="tt_copy_text">-->
-        <!--                    </div>-->
-        <!--                </div>-->
+
+        <br>
+        <br>
+        <br>
         <br>
         <div class="justify-content-center">
-            <button>Clear all</button>
+            <button onclick="clearAll()" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" style="outline: none">
+                Clear all
+            </button>
         </div>
     </form>
 
@@ -192,35 +176,16 @@
             document.getElementById('result').innerHTML = getApaBook(authors, editors, organization, title, year, edition, publisher, url);
         }
 
-        function copyText() {
-            /* Get the text field */
-            var copyText = document.getElementById("result");
-
-            /* Select the text field */
-            copyText.select();
-            // copyText.setSelectionRange(0, 99999); /*For mobile devices*/
-
-            /* Copy the text inside the text field */
-            document.execCommand("copy");
-
-            // document.getElementById("tt_copy_text").innerHTML = "Copied!";
-        }
-
-        function copyToClip(str) {
-            function listener(e) {
-                e.clipboardData.setData("text/html", str);
-                e.clipboardData.setData("text/plain", str);
-                e.preventDefault();
-            }
-
-            document.addEventListener("copy", listener);
-            document.execCommand("copy");
-            document.removeEventListener("copy", listener);
-            document.getElementById("tt_copy_text").innerHTML = "Copied!";
-        };
-
-        function reset() {
-            document.getElementById("tt_copy_text").innerHTML = "Copy";
+        function clearAll() {
+            $('#authors')[0].parentElement.MaterialTextfield.change("");
+            $('#editors')[0].parentElement.MaterialTextfield.change("");
+            $('#organization')[0].parentElement.MaterialTextfield.change("");
+            $('#title')[0].parentElement.MaterialTextfield.change("");
+            $('#year')[0].parentElement.MaterialTextfield.change("");
+            $('#edition')[0].parentElement.MaterialTextfield.change("");
+            $('#publisher')[0].parentElement.MaterialTextfield.change("");
+            $('#url')[0].parentElement.MaterialTextfield.change("");
+            document.getElementById('result').innerHTML = "Please type in more information!";
         }
     </script>
 </div>

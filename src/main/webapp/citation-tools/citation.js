@@ -181,6 +181,21 @@ function getApaSite(authors, organization, title, date, siteName, url, retrieved
         return "Please type in more information!"
     return authorFinal + date + "<em>" + title + "</em>" + siteName + retrieved + url;
 }
+function copyToClip(str) {
+    function listener(e) {
+        e.clipboardData.setData("text/html", str);
+        e.clipboardData.setData("text/plain", str);
+        e.preventDefault();
+    }
 
+    document.addEventListener("copy", listener);
+    document.execCommand("copy");
+    document.removeEventListener("copy", listener);
+    document.getElementById("tt_copy_text").innerHTML = "Copied!";
+};
+
+function reset() {
+    document.getElementById("tt_copy_text").innerHTML = "Copy";
+}
 
 
