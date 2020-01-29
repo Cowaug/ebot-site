@@ -1,0 +1,49 @@
+<form action="#">
+    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="padding-bottom: 28px"
+         onkeyup="updateResult()">
+        <input class="mdl-textfield__input" type="text" id="title">
+        <label class="mdl-textfield__label" for="title">Title</label>
+    </div>
+    <div class="mdl-tooltip mdl-tooltip--large" for="title">
+        <!--           picture -->
+    </div>
+    <br>
+
+    <div class="mdl-textfield mdl-js-textfield" style="padding-bottom: 28px">
+        <input class="mdl-textfield__input" type="text" readonly id="result">
+        <label class="mdl-textfield__label" for="result">Result...</label>
+    </div>
+    <button id="tt_copy" class="mdl-button mdl-js-button mdl-button--icon" onclick="copyFunction()">
+        <i class="material-icons" onmouseover="reset()">file_copy</i>
+    </button>
+    <div class="mdl-tooltip" for="tt_copy" id="tt_copy_text">
+    </div>
+</form>
+<script src="../../js/jquery.min.js"></script>
+<script>
+    function updateResult() {
+        var title = $('#title').val();
+        var author = $('#author').val();
+        $('#result')[0].parentElement.MaterialTextfield.change(
+            title +
+            author
+        );
+    }
+
+    function copyFunction() {
+        /* Get the text field */
+        var copyText = $('#result');
+
+        /* Select the text field */
+        copyText.select();
+        // copyText.setSelectionRange(0, 99999); /*For mobile devices*/
+
+        /* Copy the text inside the text field */
+        document.execCommand("copy");
+        document.getElementById("tt_copy_text").innerHTML = "Copied!";
+    }
+
+    function reset() {
+        document.getElementById("tt_copy_text").innerHTML = "Copy";
+    }
+</script>
