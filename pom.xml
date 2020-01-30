@@ -31,6 +31,12 @@
             <version>4.0.1</version>
             <scope>provided</scope>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/org.webjars.npm/material-components-web -->
+        <dependency>
+            <groupId>org.webjars.npm</groupId>
+            <artifactId>material-components-web</artifactId>
+            <version>4.0.0</version>
+        </dependency>
     </dependencies>
     
      <build>

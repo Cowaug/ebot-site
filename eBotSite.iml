@@ -32,12 +32,62 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="material-components-web" level="application" />
+    <orderEntry type="library" name="material.indigo-pink" level="application" />
+    <orderEntry type="library" name="material" level="application" />
+    <orderEntry type="library" name="material.brown-red" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: javax:javaee-api:8.0" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: com.sun.mail:javax.mail:1.6.0" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: javax.activation:activation:1.1" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: javax.servlet:javax.servlet-api:4.0.1" level="project" />
-    <orderEntry type="library" name="material-components-web" level="application" />
-    <orderEntry type="library" name="material.indigo-pink" level="application" />
-    <orderEntry type="library" name="material" level="application" />
+    <orderEntry type="library" name="Maven: org.webjars.npm:material-components-web:4.0.0" level="project" />
+    <orderEntry type="library" name="Maven: org.webjars.npm:material__card:4.0.0-canary.1" level="project" />
+    <orderEntry type="library" name="Maven: org.webjars.npm:material__tab-bar:4.0.0-canary.1" level="project" />
+    <orderEntry type="library" name="Maven: org.webjars.npm:tslib:1.10.0" level="project" />
+    <orderEntry type="library" name="Maven: org.webjars.npm:material__base:4.0.0-canary.1" level="project" />
+    <orderEntry type="library" name="Maven: org.webjars.npm:material__checkbox:4.0.0-canary.1" level="project" />
+    <orderEntry type="library" name="Maven: org.webjars.npm:material__form-field:4.0.0-canary.1" level="project" />
+    <orderEntry type="library" name="Maven: org.webjars.npm:material__switch:4.0.0-canary.1" level="project" />
+    <orderEntry type="library" name="Maven: org.webjars.npm:material__drawer:4.0.0-canary.1" level="project" />
+    <orderEntry type="library" name="Maven: org.webjars.npm:focus-trap:5.1.0" level="project" />
+    <orderEntry type="library" name="Maven: org.webjars.npm:tabbable:4.0.0" level="project" />
+    <orderEntry type="library" name="Maven: org.webjars.npm:xtend:4.0.2" level="project" />
+    <orderEntry type="library" name="Maven: org.webjars.npm:material__image-list:4.0.0-canary.1" level="project" />
+    <orderEntry type="library" name="Maven: org.webjars.npm:material__tab-indicator:4.0.0-canary.1" level="project" />
+    <orderEntry type="library" name="Maven: org.webjars.npm:material__dom:4.0.0-canary.1" level="project" />
+    <orderEntry type="library" name="Maven: org.webjars.npm:material__tab-scroller:4.0.0-canary.1" level="project" />
+    <orderEntry type="library" name="Maven: org.webjars.npm:material__slider:4.0.0-canary.1" level="project" />
+    <orderEntry type="library" name="Maven: org.webjars.npm:material__line-ripple:4.0.0-canary.1" level="project" />
+    <orderEntry type="library" name="Maven: org.webjars.npm:material__layout-grid:4.0.0-canary.1" level="project" />
+    <orderEntry type="library" name="Maven: org.webjars.npm:material__touch-target:4.0.0" level="project" />
+    <orderEntry type="library" name="Maven: org.webjars.npm:material__auto-init:4.0.0-canary.1" level="project" />
+    <orderEntry type="library" name="Maven: org.webjars.npm:material__ripple:4.0.0-canary.1" level="project" />
+    <orderEntry type="library" name="Maven: org.webjars.npm:material__notched-outline:4.0.0-canary.1" level="project" />
+    <orderEntry type="library" name="Maven: org.webjars.npm:material__shape:4.0.0-canary.1" level="project" />
+    <orderEntry type="library" name="Maven: org.webjars.npm:material__feature-targeting:4.0.0-canary.1" level="project" />
+    <orderEntry type="library" name="Maven: org.webjars.npm:material__animation:4.0.0-canary.1" level="project" />
+    <orderEntry type="library" name="Maven: org.webjars.npm:material__density:4.0.0-canary.1" level="project" />
+    <orderEntry type="library" name="Maven: org.webjars.npm:material__grid-list:4.0.0-canary.1" level="project" />
+    <orderEntry type="library" name="Maven: org.webjars.npm:material__typography:4.0.0-canary.1" level="project" />
+    <orderEntry type="library" name="Maven: org.webjars.npm:material__data-table:4.0.0-canary.1" level="project" />
+    <orderEntry type="library" name="Maven: org.webjars.npm:material__theme:4.0.0-canary.1" level="project" />
+    <orderEntry type="library" name="Maven: org.webjars.npm:material__dialog:4.0.0-canary.1" level="project" />
+    <orderEntry type="library" name="Maven: org.webjars.npm:material__snackbar:4.0.0-canary.1" level="project" />
+    <orderEntry type="library" name="Maven: org.webjars.npm:material__menu:4.0.0-canary.1" level="project" />
+    <orderEntry type="library" name="Maven: org.webjars.npm:material__radio:4.0.0-canary.1" level="project" />
+    <orderEntry type="library" name="Maven: org.webjars.npm:material__icon-button:4.0.0-canary.1" level="project" />
+    <orderEntry type="library" name="Maven: org.webjars.npm:material__select:4.0.0-canary.1" level="project" />
+    <orderEntry type="library" name="Maven: org.webjars.npm:material__textfield:4.0.0-canary.1" level="project" />
+    <orderEntry type="library" name="Maven: org.webjars.npm:material__elevation:4.0.0-canary.1" level="project" />
+    <orderEntry type="library" name="Maven: org.webjars.npm:material__floating-label:4.0.0-canary.1" level="project" />
+    <orderEntry type="library" name="Maven: org.webjars.npm:material__linear-progress:4.0.0-canary.1" level="project" />
+    <orderEntry type="library" name="Maven: org.webjars.npm:material__rtl:4.0.0-canary.1" level="project" />
+    <orderEntry type="library" name="Maven: org.webjars.npm:material__top-app-bar:4.0.0-canary.1" level="project" />
+    <orderEntry type="library" name="Maven: org.webjars.npm:material__chips:4.0.0-canary.1" level="project" />
+    <orderEntry type="library" name="Maven: org.webjars.npm:material__list:4.0.0-canary.1" level="project" />
+    <orderEntry type="library" name="Maven: org.webjars.npm:material__button:4.0.0-canary.1" level="project" />
+    <orderEntry type="library" name="Maven: org.webjars.npm:material__fab:4.0.0-canary.1" level="project" />
+    <orderEntry type="library" name="Maven: org.webjars.npm:material__tab:4.0.0-canary.1" level="project" />
+    <orderEntry type="library" name="Maven: org.webjars.npm:material__menu-surface:4.0.0-canary.1" level="project" />
   </component>
 </module>
