@@ -1,0 +1,10 @@
+
+.framePadding{
+    padding: 64px 24px 24px;
+    text-align: center;
+}
+
+.textFieldStyle{
+    padding-bottom: 9px !important;
+    width: 100% !important;
+}

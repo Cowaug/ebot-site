@@ -198,4 +198,16 @@ function reset() {
     document.getElementById("tt_copy_text").innerHTML = "Copy";
 }
 
-
+function createTextBox(name, label, hint, important = false, pattern = '.*') {
+    return "        <input class=\"mdl-textfield__input\" type=\"text\" id=\""+name+"-textBox\" pattern=\""+pattern+"\">\n" +
+        "        <label class=\"mdl-textfield__label\" for=\""+name+"-textBox\" "+(important? "style=\"color: darkred\"":"")+">"+label+"</label>\n" +
+        "    <div class=\"mdc-text-field-helper-line\" style=\"text-align: left;white-space:nowrap;overflow: hidden;text-overflow: ellipsis\"><span\n" +
+        "class=\"mdc-text-field-helper-text mdc-text-field-helper-text--persistent mdc-text-field-helper-text--validation-msg\"\n" +
+        "        >"+hint+"</span>\n" +
+        "    </div>"
+}
+function createTextBox2(name, label, hint, important = false, pattern = '.*') {
+    return "<input class=\"mdc-text-field__input\" type=\"text\" id=\""+name+"-textBox\" pattern=\""+pattern+"\">\n" +
+        "    <span class=\"mdc-floating-label\" id=\"my-label-id\">Hint text</span>\n" +
+        "    <div class=\"mdc-line-ripple\"></div>"
+}

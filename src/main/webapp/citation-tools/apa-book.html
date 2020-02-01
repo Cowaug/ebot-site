@@ -3,7 +3,8 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+    <meta name="viewport"
+          content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
     <link rel="stylesheet" href="../css/open-iconic-bootstrap.min.css">
     <link rel="stylesheet" href="../css/animate.css">
 
@@ -22,6 +23,7 @@
     <link rel="stylesheet" href="../css/flaticon.css">
     <link rel="stylesheet" href="../css/icomoon.css">
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/citation.css">
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.brown-red.min.css"/>
@@ -33,129 +35,70 @@
 </head>
 
 <body>
-<div style="text-align: center;padding: 24px">
+<div class="framePadding">
+    <br>
     <form>
         <div class="border" style="padding: 8px 16px 0 16px">
             <label style="color: darkred">Authors (choose one, comma separated list):</label>
-            <!--        Author Name -->
-            <br>
 
-            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label"
-                 style="padding-bottom: 8px;width: 100%" onkeyup="updateResult()">
-                <input class="mdl-textfield__input" type="text" id="authors">
-                <label class="mdl-textfield__label" for="authors">Author's Name</label>
-                <div class="mdc-text-field-helper-line"><span
-                        class="mdc-text-field-helper-text mdc-text-field-helper-text--persistent mdc-text-field-helper-text--validation-msg"
-                >Format: First Middle Last</span>
-                </div>
+            <!--        Author Name -->
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label textFieldStyle" id="authors"
+                 onkeyup="updateResult()">
             </div>
 
             <!--        Editor Name -->
-            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label"
-                 style="padding-bottom: 8px;width: 100%" onkeyup="updateResult()">
-                <input class="mdl-textfield__input" type="text" id="editors">
-                <label class="mdl-textfield__label" for="editors">Editor's Name</label>
-                <div class="mdc-text-field-helper-line"><span
-                        class="mdc-text-field-helper-text mdc-text-field-helper-text--persistent mdc-text-field-helper-text--validation-msg"
-                >Format: First Middle Last</span>
-                </div>
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label textFieldStyle" id="editors"
+                 onkeyup="updateResult()">
             </div>
 
             <!--        Organization Name -->
-            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label"
-                 style="padding-bottom: 8px;width: 100%" onkeyup="updateResult()">
-                <input class="mdl-textfield__input" type="text" id="organization">
-                <label class="mdl-textfield__label" for="organization">Organizations, corporations, etc</label>
-                <div class="mdc-text-field-helper-line"><span
-                        class="mdc-text-field-helper-text mdc-text-field-helper-text--persistent mdc-text-field-helper-text--validation-msg"
-                >e.g. NXB Trẻ, General Motors Corporation</span>
-                </div>
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label textFieldStyle" id="organization"
+                 onkeyup="updateResult()">
             </div>
+
         </div>
         <br>
 
         <div class="border" style="padding: 8px 16px 0 16px">
             <label>Book information:</label>
             <!--        Book title -->
-            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label"
-                 style="padding-bottom: 8px;width: 100%" onkeyup="updateResult()">
-                <input class="mdl-textfield__input" type="text" id="title">
-                <label class="mdl-textfield__label" for="title" style="color: darkred">Title of book: Subtitle of
-                    book</label>
-                <div class="mdc-text-field-helper-line"><span
-                        class="mdc-text-field-helper-text mdc-text-field-helper-text--persistent mdc-text-field-helper-text--validation-msg"
-                >e.g. Just business: Business ethics in action, Introduce to C#</span>
-                </div>
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label textFieldStyle" id="title"
+                 onkeyup="updateResult()">
             </div>
-            <br>
 
             <!--        Year of Pub, Edition -->
-            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label"
-                 style="padding-bottom: 8px;width: 100%" onkeyup="updateResult()">
-                <input class="mdl-textfield__input" type="text" id="year" pattern="[0-9][0-9][0-9][0-9]">
-                <label class="mdl-textfield__label" for="year" style="color: darkred">Year of Publication</label>
-                <div class="mdc-text-field-helper-line"><span
-                        class="mdc-text-field-helper-text mdc-text-field-helper-text--persistent mdc-text-field-helper-text--validation-msg"
-                >e.g. 2000, 1978</span>
-                </div>
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label textFieldStyle" id="year"
+                 onkeyup="updateResult()">
             </div>
-            <br>
 
-            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label"
-                 style="padding-bottom: 8px;width: 100%" onkeyup="updateResult()">
-                <input class="mdl-textfield__input" type="text" id="edition" pattern="[0-9]+">
-                <label class="mdl-textfield__label" for="edition">Edition</label>
-                <div class="mdc-text-field-helper-line"><span
-                        class="mdc-text-field-helper-text mdc-text-field-helper-text--persistent mdc-text-field-helper-text--validation-msg"
-                >e.g. 1, 23</span>
-                </div>
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label textFieldStyle" id="edition"
+                 onkeyup="updateResult()">
             </div>
-            <br>
 
             <!--        Publisher-->
-            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label"
-                 style="padding-bottom: 8px;width: 100%" onkeyup="updateResult()">
-                <input class="mdl-textfield__input" type="text" id="publisher">
-                <label class="mdl-textfield__label" for="publisher" style="color: darkred">Publisher (*if is not an
-                    eBook)</label>
-                <div class="mdc-text-field-helper-line"><span
-                        class="mdc-text-field-helper-text mdc-text-field-helper-text--persistent mdc-text-field-helper-text--validation-msg"
-                >e.g. Oxford University Press</span>
-                </div>
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label textFieldStyle" id="publisher"
+                 onkeyup="updateResult()">
             </div>
-            <br>
 
             <!--        URL-->
-            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label"
-                 style="padding-bottom: 8px;width: 100%" onkeyup="updateResult()">
-                <input class="mdl-textfield__input" type="text" id="url">
-                <label class="mdl-textfield__label" for="url" style="color: darkred">URL (*if is an eBook)</label>
-                <div class="mdc-text-field-helper-line"><span
-                        class="mdc-text-field-helper-text mdc-text-field-helper-text--persistent mdc-text-field-helper-text--validation-msg"
-                >e.g. http://www.gutenberg.org/ebooks/14264</span>
-                </div>
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label textFieldStyle" id="url"
+                 onkeyup="updateResult()">
             </div>
-            <br>
+
         </div>
         <br>
-
 
         <!--        Result -->
-        <div style="padding: 8px;height: 44px;border-style: solid;border-color: #1c7430;border-width: 1px;color: black">
-            <label id="result"
-                   class="float-left"
-                   style="width: calc(100% - 32px);white-space:nowrap;overflow: hidden;text-overflow: ellipsis;padding-top: 3px;text-align: left"
-            >Please type in more information!</label>
-            <i class="float-right material-icons" onmouseover="reset()" id="tt_copy" style="outline: none"
-               onclick="copyToClip(document.getElementById('result').innerHTML)">file_copy</i>
-            <div class="mdl-tooltip" for="tt_copy" id="tt_copy_text">
-            </div>
+        <div class="mdc-chip"  role="row" style="outline: none;max-width: 100%;white-space:nowrap;overflow: hidden;text-overflow: ellipsis;text-align: left;border-color: #1c7430" id="tt-copy" onclick=copyToClip(document.getElementById('result').innerHTML)>
+            <div class="mdc-chip__ripple" ></div>
+            <span role="gridcell"  style="outline: none;max-width: 100%;white-space:nowrap;overflow: hidden;text-overflow: ellipsis;text-align: left">
+                    <span id="result"  tabindex="0" class="mdc-chip__text" onmouseover="reset()"
+                    >Please type in more information!</span>
+                </span>
         </div>
-
-        <br>
-        <br>
-        <br>
-        <br>
+        <div class="mdl-tooltip" for="tt-copy" id="tt_copy_text">
+        </div>
+        <br> <br> <br> <br>
         <div class="justify-content-center">
             <button onclick="clearAll()" class="mdc-button mdc-button--outlined"
                     style="outline: none;color: darkred;border-color: darkred"><span
@@ -164,35 +107,66 @@
         </div>
     </form>
 
+
     <script src="../js/jquery.min.js"></script>
     <script src="../js/citation.js"></script>
+
     <script>
         mdc.autoInit();
-    </script>
-    <script>
+        document.getElementById("authors").innerHTML = createTextBox("authors", "Author's Name", "Format: First Middle Last");
+        document.getElementById("editors").innerHTML = createTextBox("editors", "Editor's Name", "Format: First Middle Last");
+        document.getElementById("organization").innerHTML = createTextBox("organization", "Organizations, corporations, etc", "e.g. NXB Trẻ");
+        document.getElementById("title").innerHTML = createTextBox("title", "Title of book: Subtitle of book", "e.g. Just business: Business ethics in action, Verge", true);
+        document.getElementById("year").innerHTML = createTextBox("year", "Year of Publication", "e.g. 2000", true, "[0-9][0-9][0-9][0-9]");
+        document.getElementById("edition").innerHTML = createTextBox("edition", "Edition", "e.g 2, 23", false, "[0-9]+");
+        document.getElementById("publisher").innerHTML = createTextBox("publisher", "Publisher (*if is not an eBook)", "e.g. Oxford University Press", true);
+        document.getElementById("url").innerHTML = createTextBox("url", "URL (*if is an eBook)", "e.g. http://www.gutenberg.org/ebooks/14264", true);
+
+
+        var authors;
+        var editors;
+        var organization;
+        var title;
+        var year;
+        var edition;
+        var publisher;
+        var url;
+
         function updateResult() {
-            var authors = $('#authors').val();
-            var editors = $('#editors').val();
-            var organization = $('#organization').val();
-            var title = $('#title').val();
-            var year = $('#year').val();
-            var edition = $('#edition').val();
-            var publisher = $('#publisher').val();
-            var url = $('#url').val();
-            //$('#result')[0].parentElement.MaterialTextfield.change(getApaBook(authors, editors, organization, title, year, edition, publisher, url));
+            authors = $('#authors-textBox').val();
+            editors = $('#editors-textBox').val();
+            organization = $('#organization-textBox').val();
+            title = $('#title-textBox').val();
+            year = $('#year-textBox').val();
+            edition = $('#edition-textBox').val();
+            publisher = $('#publisher-textBox').val();
+            url = $('#url-textBox').val();
+            //$('#result-textBox')[0].parentElement.MaterialTextfield.change(getApaBook(authors, editors, organization, title, year, edition, publisher, url));
             document.getElementById('result').innerHTML = getApaBook(authors, editors, organization, title, year, edition, publisher, url);
         }
 
         function clearAll() {
-            $('#authors')[0].parentElement.MaterialTextfield.change("");
-            $('#editors')[0].parentElement.MaterialTextfield.change("");
-            $('#organization')[0].parentElement.MaterialTextfield.change("");
-            $('#title')[0].parentElement.MaterialTextfield.change("");
-            $('#year')[0].parentElement.MaterialTextfield.change("");
-            $('#edition')[0].parentElement.MaterialTextfield.change("");
-            $('#publisher')[0].parentElement.MaterialTextfield.change("");
-            $('#url')[0].parentElement.MaterialTextfield.change("");
+            $('#authors-textBox')[0].parentElement.MaterialTextfield.change("");
+            $('#editors-textBox')[0].parentElement.MaterialTextfield.change("");
+            $('#organization-textBox')[0].parentElement.MaterialTextfield.change("");
+            $('#title-textBox')[0].parentElement.MaterialTextfield.change("");
+            $('#year-textBox')[0].parentElement.MaterialTextfield.change("");
+            $('#edition-textBox')[0].parentElement.MaterialTextfield.change("");
+            $('#publisher-textBox')[0].parentElement.MaterialTextfield.change("");
+            $('#url-textBox')[0].parentElement.MaterialTextfield.change("");
             document.getElementById('result').innerHTML = "Please type in more information!";
+        }
+
+        function undoClear() {
+            $('#authors-textBox')[0].parentElement.MaterialTextfield.change(authors);
+            $('#editors-textBox')[0].parentElement.MaterialTextfield.change(editors);
+            $('#organization-textBox')[0].parentElement.MaterialTextfield.change(organization);
+            $('#title-textBox')[0].parentElement.MaterialTextfield.change(title);
+            $('#year-textBox')[0].parentElement.MaterialTextfield.change(year);
+            $('#edition-textBox')[0].parentElement.MaterialTextfield.change(edition);
+            $('#publisher-textBox')[0].parentElement.MaterialTextfield.change(publisher);
+            $('#url-textBox')[0].parentElement.MaterialTextfield.change(url);
+            updateResult();
         }
     </script>
 </div>
