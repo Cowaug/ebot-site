@@ -45,6 +45,7 @@
 
 <style>
     .iframeClass {
+        height: 1000px;
     }
 </style>
 
@@ -74,6 +75,10 @@
                     <i class="material-icons mdc-list-item__graphic" aria-hidden="true">web</i>
                     <span class="mdc-list-item__text">Website</span>
                 </a>
+                <a class="mdc-list-item" aria-selected="true" onclick=show("apa-journal")>
+                    <i class="material-icons mdc-list-item__graphic" aria-hidden="true">web</i>
+                    <span class="mdc-list-item__text">Journal</span>
+                </a>
 
                 <hr class="mdc-list-divider">
                 <h6 class="mdc-list-group__subheader">IEEE</h6>
@@ -95,16 +100,19 @@
 
     <!-- Content -->
         <iframe id="apa-book" class="iframeClass" style="opacity: 0;position: fixed"
-                src="citation-tools/apa-book.html?#" onload="resizeIframe(this)" onchange="resizeIframe(this)"></iframe>
+                src="Citation?language=en&type=apa-book" onload="resizeIframe(this)"></iframe>
 
         <iframe id="apa-website" class="iframeClass" style="opacity: 0;position: fixed"
-                src="citation-tools/apa-website.html?#" onload="resizeIframe(this)"></iframe>
+                src="Citation?language=en&type=apa-website" onload="resizeIframe(this)">
+
+        </iframe><iframe id="apa-journal" class="iframeClass" style="opacity: 0;position: fixed"
+                src="Citation?language=en&type=apa-journal" onload="resizeIframe(this)"></iframe>
 
         <iframe id="ieee-book" class="iframeClass" style="opacity: 0;position: fixed"
-                src="citation-tools/ieee-book.html?#" onload="resizeIframe(this)"></iframe>
+                src="citation-tools/coming-soon.html?#" onload="resizeIframe(this)"></iframe>
 
         <iframe id="ieee-website" class="iframeClass" style="opacity: 0;position: fixed"
-                src="citation-tools/ieee-website.html?#" onload="resizeIframe(this)"></iframe>
+                src="citation-tools/coming-soon.html?#" onload="resizeIframe(this)"></iframe>
 
 </div>
 

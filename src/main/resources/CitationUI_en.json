@@ -1,0 +1,226 @@
+{
+  "apa-book": [
+    {
+      "Box": "1",
+      "Display": "Author's Name",
+      "Hint": "Format: First Middle Last",
+      "Important": "FALSE",
+      "Pattern": ".*"
+    },
+    {
+      "Box": "1",
+      "Display": "Editor's Name",
+      "Hint": "Format: First Middle Last",
+      "Important": "FALSE",
+      "Pattern": ".*"
+    },
+    {
+      "Box": "1",
+      "Display": "Organizations, corporations, etc",
+      "Hint": "e.g. NXB Trẻ",
+      "Important": "FALSE",
+      "Pattern": ".*"
+    },
+    {
+      "Box": "2",
+      "Display": "Title of book: Subtitle of book",
+      "Hint": "e.g. Just business: Business ethics in action, Verge",
+      "Important": "TRUE",
+      "Pattern": ".*"
+    },
+    {
+      "Box": "2",
+      "Display": "Year of Publication",
+      "Hint": "e.g. 2000",
+      "Important": "TRUE",
+      "Pattern": "[0-9][0-9][0-9][0-9]"
+    },
+    {
+      "Box": "2",
+      "Display": "Edition",
+      "Hint": "e.g 2, 23",
+      "Important": "FALSE",
+      "Pattern": "[0-9]+"
+    },
+    {
+      "Box": "2",
+      "Display": "Publisher (*if is not an eBook)",
+      "Hint": "e.g. Oxford University Press",
+      "Important": "TRUE",
+      "Pattern": ".*"
+    },
+    {
+      "Box": "2",
+      "Display": "URL (*if is an eBook)",
+      "Hint": "e.g. http://www.example.com/sub/address",
+      "Important": "TRUE",
+      "Pattern": ".*"
+    }
+  ],
+  "apa-website": [
+    {
+      "Box": "1",
+      "Display": "Author's Name",
+      "Hint": "Format: First Middle Last",
+      "Important": "FALSE",
+      "Pattern": ".*"
+    },
+    {
+      "Box": "1",
+      "Display": "Groups",
+      "Hint": "e.g. United States Department of Education",
+      "Important": "FALSE",
+      "Pattern": ".*"
+    },
+    {
+      "Box": "2",
+      "Display": "Title of work",
+      "Hint": "e.g. The best anime of 2019",
+      "Important": "TRUE",
+      "Pattern": ".*"
+    },
+    {
+      "Box": "2",
+      "Display": "Date of Publication or Update",
+      "Hint": "Format: dd/mm/yyyy or mm/yyyy",
+      "Important": "FALSE",
+      "Pattern": "((31|30|[1-2][0-9]|0[1-9]|[1-9])/)?(0[1-9]|1[0-2]|[1-9])/[1-9][0-9][0-9][0-9]"
+    },
+    {
+      "Box": "2",
+      "Display": "Site name",
+      "Hint": "e.g. GitHub, Amazon, w3school,...",
+      "Important": "FALSE",
+      "Pattern": ".*"
+    },
+    {
+      "Box": "2",
+      "Display": "URL (*if is an eBook)",
+      "Hint": "e.g. http://www.example.com/sub/address",
+      "Important": "TRUE",
+      "Pattern": ".*"
+    },
+    {
+      "Box": "2",
+      "Display": "Retrieved date",
+      "Hint": "Format: dd/mm/yyyy",
+      "Important": "FALSE",
+      "Pattern": "(31|30|[1-2][0-9]|0[1-9]|[1-9])/(0[1-9]|1[0-2]|[1-9])/[1-9][0-9][0-9][0-9]"
+    }
+  ],
+  "apa-journal": [
+    {
+      "Box": "1",
+      "Display": "Author's Name",
+      "Hint": "Format: First Middle Last",
+      "Important": "TRUE",
+      "Pattern": ".*"
+    },
+    {
+      "Box": "2",
+      "Display": "Title of article",
+      "Hint": "e.g. Home building in Los Angeles",
+      "Important": "TRUE",
+      "Pattern": ".*"
+    },
+    {
+      "Box": "2",
+      "Display": "Year of Publication",
+      "Hint": "e.g. 2000",
+      "Important": "TRUE",
+      "Pattern": "[0-9][0-9][0-9][0-9]"
+    },
+    {
+      "Box": "2",
+      "Display": "Name of Journal",
+      "Hint": "Journal of Urban History",
+      "Important": "TRUE",
+      "Pattern": ".*"
+    },
+    {
+      "Box": "2",
+      "Display": "Volume",
+      "Hint": "e.g. 19",
+      "Important": "FALSE",
+      "Pattern": "[0-9]+"
+    },
+    {
+      "Box": "2",
+      "Display": "Issue",
+      "Hint": "e.g. 6",
+      "Important": "FALSE",
+      "Pattern": "[0-9]+"
+    },
+    {
+      "Box": "2",
+      "Display": "Pages",
+      "Hint": "e.g. 123, 456-458",
+      "Important": "TRUE",
+      "Pattern": "[0-9]+(-[0-9]+)?"
+    },
+    {
+      "Box": "2",
+      "Display": "URL (*if is an electronic resource)",
+      "Hint": "e.g. http://www.example.com/sub/address",
+      "Important": "FALSE",
+      "Pattern": ".*"
+    }
+  ],
+  "apa-encylopedia!": [
+    {
+      "Box": "1",
+      "Display": "Author's Name",
+      "Hint": "Format: First Middle Last",
+      "Important": "FALSE",
+      "Pattern": ".*"
+    },
+    {
+      "Box": "1",
+      "Display": "Editor's Name",
+      "Hint": "Format: First Middle Last",
+      "Important": "FALSE",
+      "Pattern": ".*"
+    },
+    {
+      "Box": "2",
+      "Display": "Title of work",
+      "Hint": "e.g. The best anime of 2019",
+      "Important": "FALSE",
+      "Pattern": ".*"
+    },
+    {
+      "Box": "2",
+      "Display": "Year of Publication",
+      "Hint": "e.g. 2000",
+      "Important": "FALSE",
+      "Pattern": "[0-9][0-9][0-9][0-9]"
+    },
+    {
+      "Box": "2",
+      "Display": "Name of reference source",
+      "Hint": "e.g. Oxford English dictionary",
+      "Important": "FALSE"
+    },
+    {
+      "Box": "2",
+      "Display": "Volume",
+      "Hint": "e.g. 1, 12",
+      "Important": "FALSE",
+      "Pattern": "[0-9]+"
+    },
+    {
+      "Box": "2",
+      "Display": "Page",
+      "Hint": "e.g. 123, 456-458",
+      "Important": "FALSE",
+      "Pattern": "[0-9]+(-[0-9]+)?"
+    },
+    {
+      "Box": "2",
+      "Display": "Publisher",
+      "Hint": "e.g. Oxford University Press",
+      "Important": "FALSE",
+      "Pattern": ".*"
+    }
+  ]
+}
