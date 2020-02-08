@@ -107,6 +107,9 @@ function getMonth(month) {
 }
 
 function get_apa_book(list) {
+    for (var i = 0; i < list.length; i++) {
+        while (list[i].startsWith(" ")) list[i] = list[i].substr(1);
+    }
     var authors = list[0],
         editors = list[1],
         organization = list[2],
@@ -115,10 +118,12 @@ function get_apa_book(list) {
         edition = list[5],
         publisher = list[6],
         url = list[7];
-
-    while (title.startsWith(" ")) title = title.substr(1);
-    while (publisher.startsWith(" ")) publisher = publisher.substr(1);
-    while (url.startsWith(" ")) url = url.substr(1);
+    if (authors === "" ||
+        title === "" ||
+        year === "" ||
+        (publisher === "" && url === "")
+    )
+        return "Please type in more information!";
 
     var authorFinal = getApaAuthor(authors, editors, organization);
 
@@ -160,16 +165,14 @@ function get_apa_book(list) {
     if (url !== "")
         url = "Retrieved from " + url + ".";
 
-    if (authorFinal.toString() === "undefined " ||
-        title === "" ||
-        year === "" ||
-        (publisher === "" && url === "")
-    )
-        return "Please type in more information!";
+
     return authorFinal + year + "<em>" + title + "</em>" + edition + publisher + url;
 }
 
 function get_apa_website(list) {
+    for (var i = 0; i < list.length; i++) {
+        while (list[i].startsWith(" ")) list[i] = list[i].substr(1);
+    }
     var authors = list[0],
         group = list[1],
         title = list[2],
@@ -177,10 +180,11 @@ function get_apa_website(list) {
         siteName = list[4],
         url = list[5],
         retrieved = list[6];
+    if (authors === " " ||
+        title === "" ||
+        url === ""
+    ) return "Please type in more information!"
 
-    while (title.startsWith(" ")) title = title.substr(1);
-    while (siteName.startsWith(" ")) siteName = siteName.substr(1);
-    while (url.startsWith(" ")) url = url.substr(1);
 
     var authorFinal = getApaAuthor(authors, "", group);
 
@@ -216,15 +220,13 @@ function get_apa_website(list) {
         url
     }
 
-    if (authorFinal.toString() === "undefined " ||
-        title === "" ||
-        url === "" || url === "from "
-    )
-        return "Please type in more information!"
     return authorFinal + date + "<em>" + title + "</em>" + siteName + retrieved + url;
 }
 
 function get_apa_journal(list) {
+    for (var i = 0; i < list.length; i++) {
+        while (list[i].startsWith(" ")) list[i] = list[i].substr(1);
+    }
     var authors = list[0],
         title = list[1],
         year = list[2],
@@ -233,10 +235,6 @@ function get_apa_journal(list) {
         issue = list[5],
         pages = list[6],
         url = list[7];
-
-    while (title.startsWith(" ")) title = title.substr(1);
-    while (name.startsWith(" ")) name = name.substr(1);
-    while (url.startsWith(" ")) url = url.substr(1);
 
     if (authors === "" ||
         title === "" ||
@@ -307,6 +305,17 @@ function createResultField() {
         "                    class=\"mdc-button__ripple\"></span> Clear all\n" +
         "            </button>\n" +
         "        </div>";
+}
+
+function createDrawerItems(id, display, icon, currentSelection) {
+    return "<a class=\"mdc-list-item" + (id === currentSelection ? " mdc-list-item--activated" : "") + "\" aria-selected=\"true\" id=\""+id+"-btn\" onclick=show(\"" + id + "\")>\n" +
+        "<i class=\"material-icons mdc-list-item__graphic\" aria-hidden=\"true\">" + icon + "</i>\n" +
+        " <span class=\"mdc-list-item__text\">" + display + "</span>\n" +
+        "</a>\n";
+}
+
+function createIFrame(id) {
+    return "<iframe id=\"" + id + "\" class=\"iframeClass\" onload=\"resizeIframe(this)\" src=\"\"></iframe>";
 }
 
 function clearAll() {

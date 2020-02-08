@@ -1,51 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <title>Citation Tools by eBotTeam</title>
-    <meta charset="utf-8">
-
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
     <link rel="icon"
           href="https://cdn.discordapp.com/icons/602896661643001856/ea6f59bfa350778dba954afb02a536af.webp?size=128">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <link href="https://fonts.googleapis.com/css?family=Work+Sans:100,200,300,400,700,800" rel="stylesheet">
-
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-
-    <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
-    <link rel="stylesheet" href="css/animate.css">
-
-    <link rel="stylesheet" href="css/owl.carousel.min.css">
-    <link rel="stylesheet" href="css/owl.theme.default.min.css">
-    <link rel="stylesheet" href="css/magnific-popup.css">
-
-    <link rel="stylesheet" href="css/aos.css">
-
-    <link rel="stylesheet" href="css/ionicons.min.css">
-
-    <link rel="stylesheet" href="css/bootstrap-datepicker.css">
-    <link rel="stylesheet" href="css/jquery.timepicker.css">
-
-
-    <link rel="stylesheet" href="css/flaticon.css">
-    <link rel="stylesheet" href="css/icomoon.css">
     <link rel="stylesheet" href="css/style.css">
-
+    <link rel="stylesheet" href="css/citation.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.brown-red.min.css"/>
+    <link rel="stylesheet" href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css">
 
     <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
-
-
-    <link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
     <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <script src="js/jquery.min.js"></script>
+    <script src="js/citation.js" charset="utf-8"></script>
 </head>
 
 <style>
     .iframeClass {
         height: 1000px;
+        opacity: 0;
+        position: fixed;
     }
 </style>
 
@@ -59,104 +36,108 @@
                         style="outline: none">menu
                 </button>
                 <a class="mdc-top-app-bar__title" style="color: inherit;" id="header">APA Book</a>
+
             </section>
         </div>
     </header>
 
-    <aside class="mdc-drawer mdc-drawer--modal mdc-top-app-bar--fixed-adjust  mdc-drawer--open">
-        <div class="mdc-drawer__content">
-            <nav class="mdc-list">
+    <aside class="mdc-drawer mdc-drawer--modal mdc-top-app-bar--fixed-adjust mdc-drawer--open">
+        <div class="mdc-drawer__content" style="padding-top: 6px">
+            <a class="mdc-list-item" id="language"> </a>
+            <nav class="mdc-list" style="padding-top: 0;">
+                <hr class="mdc-list-divider">
                 <h6 class="mdc-list-group__subheader">APA</h6>
-                <a class="mdc-list-item mdc-list-item--activated" aria-selected="true" onclick=show("apa-book")>
-                    <i class="material-icons mdc-list-item__graphic" aria-hidden="true">book</i>
-                    <span class="mdc-list-item__text">Book</span>
-                </a>
-                <a class="mdc-list-item" aria-selected="true" onclick=show("apa-website")>
-                    <i class="material-icons mdc-list-item__graphic" aria-hidden="true">web</i>
-                    <span class="mdc-list-item__text">Website</span>
-                </a>
-                <a class="mdc-list-item" aria-selected="true" onclick=show("apa-journal")>
-                    <i class="material-icons mdc-list-item__graphic" aria-hidden="true">web</i>
-                    <span class="mdc-list-item__text">Journal</span>
-                </a>
+                <section style="padding-top: 6px" id="apa">
+                </section>
 
                 <hr class="mdc-list-divider">
                 <h6 class="mdc-list-group__subheader">IEEE</h6>
-                <a class="mdc-list-item" aria-selected="true" onclick=show("ieee-book")>
-                    <i class="material-icons mdc-list-item__graphic" aria-hidden="true">book</i>
+                <section style="padding-top: 6px" id="ieee">
+                </section>
+                <hr class="mdc-list-divider">
+                <a class="mdc-list-item mdc-list-item--activated" style="visibility: hidden" aria-selected="true"
+                   onclick=show("ieee-book",this)>
+                    <i class="material-icons mdc-list-item__graphic" aria-hidden="true"></i>
                     <span class="mdc-list-item__text">Book</span>
                 </a>
-
-                <a class="mdc-list-item" aria-selected="true" onclick=show("ieee-website")>
-                    <i class="material-icons mdc-list-item__graphic" aria-hidden="true">web</i>
-                    <span class="mdc-list-item__text">Website</span>
-                </a>
             </nav>
-
-
         </div>
     </aside>
     <div class="mdc-drawer-scrim"></div>
-
     <!-- Content -->
-        <iframe id="apa-book" class="iframeClass" style="opacity: 0;position: fixed"
-                src="Citation?language=en&type=apa-book" onload="resizeIframe(this)"></iframe>
-
-        <iframe id="apa-website" class="iframeClass" style="opacity: 0;position: fixed"
-                src="Citation?language=en&type=apa-website" onload="resizeIframe(this)">
-
-        </iframe><iframe id="apa-journal" class="iframeClass" style="opacity: 0;position: fixed"
-                src="Citation?language=en&type=apa-journal" onload="resizeIframe(this)"></iframe>
-
-        <iframe id="ieee-book" class="iframeClass" style="opacity: 0;position: fixed"
-                src="citation-tools/coming-soon.html?#" onload="resizeIframe(this)"></iframe>
-
-        <iframe id="ieee-website" class="iframeClass" style="opacity: 0;position: fixed"
-                src="citation-tools/coming-soon.html?#" onload="resizeIframe(this)"></iframe>
-
+    <section id="content">
+    </section>
 </div>
 
-
 <script>
-    function resizeIframe(iframe) {
-        window.scrollTo(0,0)
-        var body = iframe.contentWindow.document.body,
-            html = iframe.contentWindow.document.documentElement;
-        var height = Math.max(body.scrollHeight, body.offsetHeight,
-            html.clientHeight, html.scrollHeight, html.offsetHeight);
-        iframe.height = height +16+ "px";
-        if (iframe.id !== "apa-book")
-            iframe.style.display = "none";
-        iframe.style.opacity="100";
-        iframe.style.position = "unset"
-    }
-
     var drawer = mdc.drawer.MDCDrawer.attachTo(document.querySelector('.mdc-drawer'));
-
     var button = document.querySelector('button');
     button.addEventListener('click', function () {
         drawer.open = !drawer.open
     });
-
     var list = document.getElementsByClassName('iframeClass');
+    var curSelection = "";
+    loadDrawer("en");
+
+    function loadDrawer(language) {
+        $.getJSON("./res/CitationUI_" + language + ".json", function (json) {
+            var tmp = json.drawer;
+            document.getElementById("apa").innerHTML = "";
+            document.getElementById("ieee").innerHTML = "";
+            document.getElementById("content").innerHTML = "";
+            for (var i = 0; i < tmp.length; i++) {
+                if (curSelection === "") {
+                    curSelection = tmp[i].type + "-" + tmp[i].category;
+                }
+                document.getElementById(tmp[i].type).innerHTML += createDrawerItems(tmp[i].type + "-" + tmp[i].category, tmp[i].display, tmp[i].icon, curSelection);
+                document.getElementById("content").innerHTML += createIFrame(tmp[i].type + "-" + tmp[i].category);
+            }
+            toggleLanguage(language);
+        });
+    }
+
+    function toggleLanguage(language) {
+        document.getElementById("language").innerHTML = (language === "vi" ? "Switch to English" : "Chuyển sang Tiếng Việt");
+        document.getElementById("language").onclick = function () {
+            (language === "vi" ? loadDrawer("en") : loadDrawer("vi"))
+        };
+        for (i = 0; i < list.length; i++) {
+            list[i].src = "Citation?type=" + list[i].id + "&language=" + language;
+        }
+        var textList = curSelection.split("-");
+        document.getElementById("header").innerHTML = textList[0].toUpperCase() + " " + document.getElementById(curSelection + "-btn").getElementsByClassName("mdc-list-item__text")[0].innerHTML;
+    }
 
     function show(ele) {
-        var i;
         var textList = ele.split("-");
-        var text = textList[0].toUpperCase();
-        for (i = 1; i < textList.length; i++) {
-            text += " " + textList[i][0].toUpperCase() + textList[i].substr(1).toLowerCase();
-        }
-        document.getElementById("header").innerHTML = text;
-
-        for (i = 0; i < list.length; i++) {
+        document.getElementById("header").innerHTML = textList[0].toUpperCase() + " " + document.getElementById(ele + "-btn").getElementsByClassName("mdc-list-item__text")[0].innerHTML;
+        curSelection = ele;
+        for (var i = 0; i < list.length; i++) {
             if (list[i].id !== ele) list[i].style.display = "none";
             else {
                 list[i].style.display = "unset";
             }
         }
-        window.scrollTo(0,0);
+        window.scrollTo(0, 0);
         drawer.open = false;
+    }
+
+    function resizeIframe(iframe) {
+        window.scrollTo(0, 0)
+        var body = iframe.contentWindow.document.body,
+            html = iframe.contentWindow.document.documentElement;
+        var height = Math.max(body.scrollHeight, body.offsetHeight,
+            html.clientHeight, html.scrollHeight, html.offsetHeight);
+        iframe.height = height + 16 + "px";
+        if (iframe.id !== document.getElementsByClassName("mdc-list-item--activated").item(0).onclick.toString().replace("function onclick(event) {\n" + "show(\"", "").replace("\")\n" + "}", ""))
+            iframe.style.display = "none";
+        else {
+            drawer.open=true;
+            document.getElementById(curSelection + "-btn").click();
+            drawer.open=true;
+        }
+        iframe.style.opacity = "100";
+        iframe.style.position = "unset"
     }
 </script>
 </body>
