@@ -53,7 +53,7 @@ public class CitationPage extends HttpServlet {
                     "    <link rel=\"stylesheet\" href=\"" + path + "/css/style.css\">\n" +
                     "    <link rel=\"stylesheet\" href=\"" + path + "/css/citation.css\">\n" +
                     "    <link rel=\"stylesheet\" href=\"https://fonts.googleapis.com/icon?family=Material+Icons\">\n" +
-                    "    <link rel=\"stylesheet\" href=\"https://code.getmdl.io/1.3.0/material.brown-red.min.css\"/>\n" +
+                    "    <link rel=\"stylesheet\" href=\"https://code.getmdl.io/1.3.0/material.grey-orange.min.css\"/>\n" +
                     "    <link rel=\"stylesheet\" href=\"https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css\">\n" +
                     "\n" +
                     "    <script defer src=\"https://code.getmdl.io/1.3.0/material.min.js\"></script>\n" +
@@ -61,23 +61,11 @@ public class CitationPage extends HttpServlet {
                     "    <script src=\"" + path + "/js/jquery.min.js\"></script>\n" +
                     "    <script src=\"" + path + "/js/citation.js\"></script>\n" +
                     "</head>\n" +
-                    "\n" +
+
                     "<body class=\"framePadding\">\n" +
-                    "<br>\n" +
                     "<form id=\"form\">\n" +
-                    "    <div class=\"border\" style=\"padding: 8px 16px 0 16px\" id=\"box1\">\n" +
-                    "        <label style=\"color: darkred\">Authors (comma separated list):</label>\n" +
-                    "        <!-- Author Name -->\n" +
-                    "        <!-- Group Name -->\n" +
-                    "    </div>\n" +
-                    "    <br>\n" +
-                    "    <div class=\"border\" style=\"padding: 8px 16px 0 16px\" id=\"box2\">\n" +
-                    "        <label>" + getTypeName(type) + " Information:</label>\n" +
-                    "        <!-- Article title -->\n" +
-                    "        <!-- Date of Pub / Up -->\n" +
-                    "        <!-- Site name-->\n" +
-                    "        <!-- URL-->\n" +
-                    "        <!-- Retrieved date-->\n" +
+                    "    <div class=\"border\" style=\"padding: 8px 16px 0 16px\" id=\"box\">\n" +
+                    "        <label>"+(language.equals("vi")?"Các ô xanh là quan trọng (bỏ qua nếu không tìm thấy)":"Field with blue text is recommended")+"</label>\n" +
                     "    </div>\n" +
                     "    <br>\n" +
                     "    <!-- Result -->\n" +
@@ -109,9 +97,9 @@ public class CitationPage extends HttpServlet {
                     "\n" +
                     "    <link rel=\"stylesheet\" href=\"" + path + "/css/style.css\">\n" +
                     "    <link rel=\"stylesheet\" href=\"" + path + "/css/citation.css\">\n" +
-                    "    <link rel=\"stylesheet\" href=\"https://code.getmdl.io/1.3.0/material.brown-red.min.css\"/>\n" +
+                    "    <link rel=\"stylesheet\" href=\"https://code.getmdl.io/1.3.0/material.grey-orange.min.css\"/>\n" +
                     "</head>\n" +
-                    "\n" +
+
                     "<body>\n" +
                     "<div class=\"framePadding\">\n" +
                     "    <br>\n" +
@@ -129,6 +117,7 @@ public class CitationPage extends HttpServlet {
                     "</html>";
         }
     }
+
 
     private String getTypeName(String type) {
         StringBuilder ret = new StringBuilder("");
@@ -159,9 +148,14 @@ public class CitationPage extends HttpServlet {
 
 
         JSONArray array = (JSONArray) userConfig.get(type);
+        int tmp=1;
         for (int i = 0; i < array.size(); i++) {
             JSONObject obj = (JSONObject) array.get(i);
-            ret.append("document.getElementById(\"box").append(obj.get("Box")).append("\").innerHTML += ").append("createTextBox(").append("\"").append(i).append("\",").append("\"").append(obj.get("Display")).append("\",").append("\"").append(obj.get("Hint")).append("\",").append(obj.get("Important").toString().toLowerCase()).append(",").append("\"").append(obj.get("Pattern")).append("\");");
+            if(Integer.parseInt((String) obj.get("Number")) > tmp){
+                tmp = Integer.parseInt((String) obj.get("Number"));
+                ret.append("document.getElementById(\"box\").innerHTML += \"<br><br>\";");
+            }
+            ret.append("document.getElementById(\"box\").innerHTML += ").append("createTextBox(").append("\"").append(i).append("\",").append("\"").append(obj.get("Display")).append("\",").append("\"").append(obj.get("Hint")).append("\",").append("\"").append(obj.get("Number")).append("\",").append(obj.get("Important").toString().toLowerCase()).append(",").append("\"").append(obj.get("Pattern")).append("\");");
         }
         return ret.toString();
     }
